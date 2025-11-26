@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wisata Bojonegoro - Gaya Wayang Batik</title>
+
+<link rel="icon" href="assets/icon-192.png"> 
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(135deg, #1f0535, #3b0a5b, #a58e03, #d6a100);
+    background-size: 400% 400%;
+    animation: gradientBG 30s ease infinite;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes gradientBG {
+    0% {background-position:0% 50%;}
+    50% {background-position:100% 50%;}
+    100% {background-position:0% 50%;}
+}
+
+.batik-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.3;
+    overflow: hidden;
+}
+
+.batik-overlay::before {
+    content: '';
+    position: absolute;
+    width: 400%; 
+    height: 400%;
+    top: -150%;
+    left: -150%;
+    background: 
+        repeating-radial-gradient(circle at center, transparent 0, transparent 30px, rgba(255, 215, 0, 0.2) 35px, rgba(255, 215, 0, 0.2) 40px),
+        repeating-linear-gradient(45deg, transparent, transparent 80px, rgba(165, 142, 3, 0.4) 85px, rgba(165, 142, 3, 0.4) 160px);
+    background-size: 160px 160px;
+    animation: moveBatik 90s linear infinite; 
+    transform-origin: 50% 50%;
+}
+
+@keyframes moveBatik {
+    0% {transform: rotate(0deg) scale(1.0);}
+    50% {transform: rotate(180deg) scale(1.1);}
+    100% {transform: rotate(360deg) scale(1.0);}
+}
+
+.logo {
+    position: absolute;
+    top: 25px;
+    left: 30px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #ffd700;
+    text-shadow: 0 0 10px #ff6600, 0 0 20px #ff6600;
+    z-index: 10;
+}
+
+.container {
+    text-align: center;
+    background: rgba(0,0,0,0.6);
+    padding: 60px 90px;
+    border-radius: 30px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 70px rgba(255,215,0,0.2), 0 0 30px rgba(0,0,0,0.7);
+    z-index: 5;
+    position: relative;
+    border: 3px solid rgba(255, 215, 0, 0.7);
+}
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4em;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    text-shadow:
+        0 0 8px #fff8dc,
+        0 0 15px #ffd700,
+        0 0 30px #ff9900,
+        0 0 50px #ff6600;
+    animation: neonGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes neonGlow {
+    0% {text-shadow:0 0 8px #fff8dc,0 0 15px #ffd700,0 0 30px #ff9900,0 0 50px #ff6600;}
+    50% {text-shadow:0 0 10px #ff6600,0 0 20px #ff9900,0 0 40px #ffd700,0 0 60px #fff8dc;}
+    100% {text-shadow:0 0 8px #fff8dc,0 0 15px #ffd700,0 0 30px #ff9900,0 0 50px #ff6600;}
+}
+
+.subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 50px;
+    animation: slideGradient 7s linear infinite alternate;
+    background: linear-gradient(90deg, #ffd700, #ff8c00, #9932cc, #4b0082);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes slideGradient {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* Tombol menu utama */
+.menu-button {
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #1f0535;
+    background-color: #ffd700;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+    margin: 10px 20px;
+}
+
+.menu-button:hover {
+    background-color: #ffc400;
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.9);
+}
+</style>
+</head>
+<body>
+
+<div class="batik-overlay"></div> 
+
+<div class="logo">🎭SalFa</div>
+
+<div class="container">
+    <h1>WISATA LOKAL BOJONEGORO</h1>
+    <div class="subtitle">Kombinasi Seni Jawa & Tampilan Futuristik</div>
+
+    <!-- Menu Navigasi Benar -->
+    <a href="indexprofile.html" class="menu-button">Profil</a>
+    <a href="indexwisata.html" class="menu-button">Wisata</a>
+    <a href="indexberita.html" class="menu-button">Berita</a>
+</div>
+
+</body>
+</html>
