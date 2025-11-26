@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travoyage - Profil & Wisata Bojonegoro</title>
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<!-- BOOTSTRAP -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Cardo:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+    font-family: 'Poppins', sans-serif;
+    color:#fff;
+    text-align:center;
+    overflow-x:hidden;
+    position:relative;
+    background:#1f0535;
+}
+
+/* BACKGROUND ANIMASI */
+.animated-background{
+    background: linear-gradient(135deg, #1f0535, #3b0a5b, #a58e03, #d6a100);
+    background-size:400% 400%;
+    animation:gradientShift 30s ease infinite;
+    position:relative;
+    z-index:-10;
+}
+@keyframes gradientShift{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* OVERLAY BATIK */
+.batik-overlay{
+    position:fixed; top:0; left:0; width:100%; height:100%;
+    opacity:.2; pointer-events:none; z-index:-9;
+}
+.batik-overlay::before{
+    content:''; position:absolute; width:350%; height:350%; top:-140%; left:-140%;
+    background:
+        repeating-radial-gradient(circle, transparent 0, transparent 30px, rgba(255,215,0,0.25) 38px, rgba(255,215,0,0.25) 45px),
+        repeating-linear-gradient(45deg, transparent 0, transparent 120px, rgba(255,215,0,0.35) 130px, rgba(255,215,0,0.35) 200px);
+    background-size:180px 180px;
+    animation:batikRoll 90s linear infinite;
+}
+@keyframes batikRoll{
+    0%{transform:rotate(0) scale(1);}
+    50%{transform:rotate(180deg) scale(1.1);}
+    100%{transform:rotate(360deg) scale(1);}
+}
+
+/* SECTION HERO */
+.hero {padding: 60px 20px;}
+.hero-title {font-size:42px; font-weight:700; color:#f5d76e; font-family:'Cardo',serif;}
+
+/* CARD PROFIL & WILAYAH */
+.card-feature {
+    background: rgba(255,255,255,0.12);
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 15px;
+    transition: all .4s ease;
+    max-width: 600px; margin:auto;
+    cursor:pointer;
+}
+.card-feature:hover{
+    transform: translateY(-10px) scale(1.03);
+    box-shadow:0 0 25px rgba(255,215,0,0.6);
+    border-color:#ffd700;
+}
+.card-img-top{height:200px; width:100%; object-fit:cover; border-radius:15px;}
+.card-title-new{font-size:20px; font-weight:600; color:#ffe599; margin-top:10px; font-family:'Cardo',serif;}
+.card-text-new{font-size:14px; margin-top:6px;}
+.row.g-4{justify-content:center;}
+@media(max-width:768px){.card-feature{max-width:90%;} .card-img-top{height:180px;}}
+
+/* CARD PIMPINAN */
+.card-futuristic{
+    background: rgba(0,0,0,0.3);
+    border-radius:20px; padding:20px;
+    transition:all .4s ease;
+    cursor:pointer;
+    max-width:300px;
+    margin:auto;
+}
+.card-futuristic:hover{
+    transform:translateY(-10px) scale(1.03);
+    box-shadow:0 0 25px #0ff;
+}
+.card-futuristic img{border-radius:50%; width:180px; height:180px; object-fit:cover; border:2px solid #0ff; box-shadow:0 0 15px #0ff;}
+.neon-subtitle{color:#0ff; text-shadow:0 0 10px #0ff,0 0 20px #66f;}
+
+/* VIDEO BESAR */
+.video-wrapper{position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:1000px; margin:auto;}
+.video-wrapper iframe{position:absolute; top:0; left:0; width:100%; height:100%;}
+
+</style>
+</head>
+<body>
+
+<!-- BACKGROUND -->
+<div class="animated-background"></div>
+<div class="batik-overlay"></div>
+
+<!-- HERO -->
+<section class="hero"><h1 class="hero-title">Profil & Wisata Kabupaten Bojonegoro</h1></section>
+
+<!-- PROFIL & SEJARAH -->
+<div class="container py-4">
+  <div class="card-feature">
+    <h5 class="card-title-new">Sejarah Kabupaten Bojonegoro</h5>
+    <p class="card-text-new">Bojonegoro adalah wilayah dengan sejarah panjang, mulai dari pengaruh Majapahit hingga menjadi kabupaten resmi pada 20 Oktober 1677. Kabupaten ini memiliki kekayaan budaya, alam, dan sejarah yang unik di Jawa Timur.</p>
+  </div>
+
+  <div class="card-feature mt-4">
+    <h5 class="card-title-new">Video Sejarah Bojonegoro</h5>
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/mJ0D1CweW3g?si=f-l58Kn45nU6MFY1" title="Sejarah Bojonegoro" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- PETA & WILAYAH + KECAMATAN -->
+<div class="container py-4">
+  <h3 class="mb-4">Peta Wilayah & Administrasi Kabupaten Bojonegoro</h3>
+  <div class="card-feature">
+    <img src="peta bojonegoro.png" class="card-img-top" alt="Peta Bojonegoro">
+    <h5 class="card-title-new mt-3">Batas Wilayah</h5>
+    <ul style="text-align:left; padding-left:20px;">
+      <li>Utara: Tuban</li>
+      <li>Timur: Lamongan</li>
+      <li>Selatan: Madiun, Nganjuk, Jombang</li>
+      <li>Barat: Ngawi & Blora (Jawa Tengah)</li>
+    </ul>
+    <h5 class="card-title-new mt-3">Daftar Kecamatan</h5>
+    <ul style="text-align:left; padding-left:20px;">
+      <li>Baureno</li>
+      <li>Bejalen</li>
+      <li>Bojonegoro</li>
+      <li>Bubulan</li>
+      <li>Gayam</li>
+      <li>Gondang</li>
+      <li>Kalitidu</li>
+      <li>Kasiman</li>
+      <li>Kedungadem</li>
+      <li>Kepohbaru</li>
+      <li>Kesamben</li>
+      <li>Malo</li>
+      <li>Mojowarno</li>
+      <li>Ngambon</li>
+      <li>Ngasem</li>
+      <li>Ngraho</li>
+      <li>Padangan</li>
+      <li>Pulung</li>
+      <li>Purwosari</li>
+      <li>Sambong</li>
+      <li>Sekar</li>
+      <li>Sugihwaras</li>
+      <li>Sumberrejo</li>
+      <li>Temayang</li>
+      <li>Trucuk</li>
+      <li>Kanor</li>
+      <li>Kalitidu</li>
+      <li>Ngraho</li>
+    </ul>
+  </div>
+</div>
+
+<!-- TIMELINE PIMPINAN -->
+<div class="container py-5">
+  <h3 class="mb-4 text-center">Timeline Pimpinan Kabupaten Bojonegoro</h3>
+
+  <!-- Periode 2025–2030 -->
+  <div class="row g-4 justify-content-center mb-4">
+    <div class="col-md-5">
+      <div class="card-futuristic">
+        <img src="Bupati Bojonegoro.jpg" alt="Bupati 2025-2030">
+        <h5 class="neon-subtitle mt-3">Bupati Bojonegoro</h5>
+        <p>H. Setyo Wahono<br>Periode: 2025–2030</p>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div class="card-futuristic">
+        <img src="PROFIL-SOSOK-Nurul-Azizah-resmi-dilantik-sebagai-wakil-Bupati-Bojonegoro-2025-2030.webp" alt="Wakil Bupati 2025-2030">
+        <h5 class="neon-subtitle mt-3">Wakil Bupati Bojonegoro</h5>
+        <p>Nurul Azizah<br>Periode: 2025–2030</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Periode 2020–2025 -->
+  <div class="row g-4 justify-content-center mb-4">
+    <div class="col-md-5">
+      <div class="card-futuristic">
+        <img src="anna mu awanah.jpg" alt="Bupati 2020-2025">
+        <h5 class="neon-subtitle mt-3">Bupati Bojonegoro</h5>
+        <p>Anna Muawanah<br>Periode: 2020–2025</p>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div class="card-futuristic">
+        <img src="Wakil-2020-2025.jpg" alt="Wakil Bupati 2020-2025">
+        <h5 class="neon-subtitle mt-3">Wakil Bupati Bojonegoro</h5>
+        <p>R. Mustika Dewi<br>Periode: 2020–2025</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Periode 2015–2020 -->
+  <div class="row g-4 justify-content-center mb-4">
+    <div class="col-md-5">
+      <div class="card-futuristic">
+        <img src="Bupati-2015-2020.jpg" alt="Bupati 2015-2020">
+        <h5 class="neon-subtitle mt-3">Bupati Bojonegoro</h5>
+        <p>Rudy Poernomo<br>Periode: 2015–2020</p>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div class="card-futuristic">
+        <img src="Wakil-2015-2020.jpg" alt="Wakil Bupati 2015-2020">
+        <h5 class="neon-subtitle mt-3">Wakil Bupati Bojonegoro</h5>
+        <p>Fajar Arianto<br>Periode: 2015–2020</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Periode 2010–2015 -->
+  <div class="row g-4 justify-content-center mb-4">
+    <div class="col-md-5">
+      <div class="card-futuristic">
+        <img src="Bupati-2010-2015.jpg" alt="Bupati 2010-2015">
+        <h5 class="neon-subtitle mt-3">Bupati Bojonegoro</h5>
+        <p>H. Suyoto<br>Periode: 2010–2015</p>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div class="card-futuristic">
+        <img src="Wakil-2010-2015.jpg" alt="Wakil Bupati 2010-2015">
+        <h5 class="neon-subtitle mt-3">Wakil Bupati Bojonegoro</h5>
+        <p>Nurhadi Santoso<br>Periode: 2010–2015</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BOOTSTRAP JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
